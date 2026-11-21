@@ -1,0 +1,14 @@
+{
+  "name": "NICE · Business & Legal English",
+  "short_name": "NICE",
+  "description": "Inglês jurídico e de negócios em lições de 3 a 5 minutos.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F5F0E6",
+  "theme_color": "#1F1C18",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
