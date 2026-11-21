@@ -539,7 +539,8 @@ a.lesson-pill:active { transform: scale(.99); }
 // O Client ID do Google não é segredo: ele só funciona nos endereços autorizados no Google Cloud.
 window.Elle = window.Elle || {};
 Elle.config = {
-  googleClientId: "" // preenchido na publicação (Fase 5)
+  // Projeto "NICE" no Google Cloud; autorizado só para https://analuizaalnl.github.io
+  googleClientId: "519664039947-j5tnc0s88margu88ff3sjgfe27qthuu0.apps.googleusercontent.com"
 };
 
 // Alguns ambientes (como o link de teste no claude.ai) podem bloquear o armazenamento local.
