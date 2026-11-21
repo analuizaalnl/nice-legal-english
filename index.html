@@ -81,20 +81,20 @@
   color-scheme: light;
 }
 
-/* ---------- modo noturno: grafite, tons escuros levemente coloridos e rosé médio ----------
+/* ---------- modo noturno: ameixa e rosa ----------
    Pensado para continuar bonito mesmo quando o navegador (ex.: Samsung Internet) aplica o próprio
    escurecimento por cima: nada de fundos claros; o destaque vem de texto e bordas, e os preenchimentos
    coloridos usam tons médios (que esse filtro não "apaga"). */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #121214; --surface: #1b1b1f; --surface-2: #25252a; --ink: #ede8e2; --muted: #a09a93; --line: #303036;
-    --tint-ink: rgba(237, 232, 226, .68); --overlay: rgba(0, 0, 0, .6);
-    --primary-bg: #b0607a; --primary-ink: #ffffff;
-    --pink: #2b1f25; --yellow: #29251b; --lilac: #22222c; --mint: #1d2620; --coral: #2b211c; --lime: #25242a; --blue: #1c2430;
-    --accent: #ea9fb3; --accent-fill: #b0607a; --accent-ink: #ffffff; --accent-soft: #3a222b; --brass: #ea9fb3;
-    --good: #8ed4a5; --good-bg: #172a1f; --bad: #ff8f9c; --bad-bg: #3a1a21; --flame: #f0a868; --red: #ff8f9c; --wrong-bg: #3a1a21;
-    --hero-bg: #1e1d23; --hero-ink: #f2ede6; --hero-btn: #b0607a; --hero-btn-ink: #ffffff;
-    --eq-direct: #1d2d22; --eq-approx: #2e2a1a; --eq-none: #33202a;
+    --bg: #161118; --surface: #1d1620; --surface-2: #281e2b; --ink: #f1eaf0; --muted: #ab9ca9; --line: #35293a;
+    --tint-ink: rgba(241, 234, 240, .68); --overlay: rgba(0, 0, 0, .6);
+    --primary-bg: #e8a3c0; --primary-ink: #1c1420;
+    --pink: #2e1d2b; --yellow: #2b2321; --lilac: #251f31; --mint: #1f2624; --coral: #2f2023; --lime: #2a2130; --blue: #1f2033;
+    --accent: #f0b3cb; --accent-fill: #e8a3c0; --accent-ink: #1c1420; --accent-soft: #3b2236; --brass: #f0b3cb;
+    --good: #a3d9b5; --good-bg: #18271f; --bad: #ff9aaa; --bad-bg: #36192a; --flame: #f0a868; --red: #ff9aaa; --wrong-bg: #36192a;
+    --hero-bg: #231a26; --hero-ink: #f4edf2; --hero-btn: #e8a3c0; --hero-btn-ink: #1c1420;
+    --eq-direct: #1f2b25; --eq-approx: #2e2720; --eq-none: #361d2c;
     --edge: inset 0 0 0 1px rgba(255, 255, 255, .05);
     --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .3);
     --shadow-up: 0 2px 4px rgba(0, 0, 0, .45), 0 14px 36px rgba(0, 0, 0, .45);
@@ -102,14 +102,14 @@
   }
 }
 :root[data-theme="dark"] {
-  --bg: #121214; --surface: #1b1b1f; --surface-2: #25252a; --ink: #ede8e2; --muted: #a09a93; --line: #303036;
-  --tint-ink: rgba(237, 232, 226, .68); --overlay: rgba(0, 0, 0, .6);
-  --primary-bg: #b0607a; --primary-ink: #ffffff;
-  --pink: #2b1f25; --yellow: #29251b; --lilac: #22222c; --mint: #1d2620; --coral: #2b211c; --lime: #25242a; --blue: #1c2430;
-  --accent: #ea9fb3; --accent-fill: #b0607a; --accent-ink: #ffffff; --accent-soft: #3a222b; --brass: #ea9fb3;
-  --good: #8ed4a5; --good-bg: #172a1f; --bad: #ff8f9c; --bad-bg: #3a1a21; --flame: #f0a868; --red: #ff8f9c; --wrong-bg: #3a1a21;
-  --hero-bg: #1e1d23; --hero-ink: #f2ede6; --hero-btn: #b0607a; --hero-btn-ink: #ffffff;
-  --eq-direct: #1d2d22; --eq-approx: #2e2a1a; --eq-none: #33202a;
+  --bg: #161118; --surface: #1d1620; --surface-2: #281e2b; --ink: #f1eaf0; --muted: #ab9ca9; --line: #35293a;
+  --tint-ink: rgba(241, 234, 240, .68); --overlay: rgba(0, 0, 0, .6);
+  --primary-bg: #e8a3c0; --primary-ink: #1c1420;
+  --pink: #2e1d2b; --yellow: #2b2321; --lilac: #251f31; --mint: #1f2624; --coral: #2f2023; --lime: #2a2130; --blue: #1f2033;
+  --accent: #f0b3cb; --accent-fill: #e8a3c0; --accent-ink: #1c1420; --accent-soft: #3b2236; --brass: #f0b3cb;
+  --good: #a3d9b5; --good-bg: #18271f; --bad: #ff9aaa; --bad-bg: #36192a; --flame: #f0a868; --red: #ff9aaa; --wrong-bg: #36192a;
+  --hero-bg: #231a26; --hero-ink: #f4edf2; --hero-btn: #e8a3c0; --hero-btn-ink: #1c1420;
+  --eq-direct: #1f2b25; --eq-approx: #2e2720; --eq-none: #361d2c;
   --edge: inset 0 0 0 1px rgba(255, 255, 255, .05);
   --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .3);
   --shadow-up: 0 2px 4px rgba(0, 0, 0, .45), 0 14px 36px rgba(0, 0, 0, .45);
@@ -555,7 +555,7 @@ a.lesson-pill:active { transform: scale(.99); }
 // O Client ID do Google não é segredo: ele só funciona nos endereços autorizados no Google Cloud.
 window.Elle = window.Elle || {};
 Elle.config = {
-  version: "v8 · 21/11", // aparece no rodapé de Ajustes, para conferir se o celular atualizou
+  version: "v9 · 21/11", // aparece no rodapé de Ajustes, para conferir se o celular atualizou
   // Projeto "NICE" no Google Cloud; autorizado só para https://analuizaalnl.github.io
   googleClientId: "519664039947-j5tnc0s88margu88ff3sjgfe27qthuu0.apps.googleusercontent.com"
 };
