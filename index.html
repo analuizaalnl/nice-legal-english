@@ -555,6 +555,7 @@ a.lesson-pill:active { transform: scale(.99); }
 // O Client ID do Google não é segredo: ele só funciona nos endereços autorizados no Google Cloud.
 window.Elle = window.Elle || {};
 Elle.config = {
+  version: "v8 · 21/11", // aparece no rodapé de Ajustes, para conferir se o celular atualizou
   // Projeto "NICE" no Google Cloud; autorizado só para https://analuizaalnl.github.io
   googleClientId: "519664039947-j5tnc0s88margu88ff3sjgfe27qthuu0.apps.googleusercontent.com"
 };
@@ -4095,6 +4096,7 @@ window.Elle = window.Elle || {};
           <button class="btn danger wide" id="reset">Zerar todo o progresso</button>
         </section>
         <p class="footer-quote">NICE · Business & Legal English · conteúdo didático, não substitui análise jurídica.</p>
+        <p class="note center">Versão ${esc(E.config.version || "")}</p>
       </div>
       ${tabbar("settings")}`;
 
