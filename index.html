@@ -21,7 +21,7 @@
    VOICE: sóbrio, confiante, humor seco.
    IDEA: um dossiê de M&A bem encadernado — papel marfim, tinta escura, carimbo bordô.
    COLOUR: marfim + tons empoeirados (rosa antigo, manteiga, sálvia, pedra);
-           bordô e latão só em momentos-chave. À noite: café, grafite e latão.
+           bordô e rosé só em momentos-chave. À noite: café, grafite e rosé. Nada de dourado.
    TYPE: Cormorant Garamond (títulos) + Instrument Sans (texto).
    LAYOUT: coluna de celular, cartões calmos, um foco por tela.
    ========================================================= */
@@ -49,7 +49,7 @@
   /* cores de momento (usadas com parcimônia) */
   --accent: #7a2e3a;      /* bordô: progresso, lição atual, XP */
   --accent-soft: #f1e2e1;
-  --brass: #a8874f;       /* latão: detalhes */
+  --brass: #a8606c;       /* rosé: detalhes (sem dourado) */
   --good: #3e6b47;
   --good-bg: #e2ebdc;
   --bad: #9b2c3a;
@@ -84,7 +84,7 @@
     --tint-ink: rgba(238, 231, 218, .66); --overlay: rgba(0, 0, 0, .55);
     --primary-bg: #eee7da; --primary-ink: #14120f;
     --pink: #352829; --yellow: #352f21; --lilac: #2a2830; --mint: #283025; --coral: #382b23; --lime: #2d2a24; --blue: #252d30;
-    --accent: #d39aa3; --accent-soft: #3a2629; --brass: #cdaa6e;
+    --accent: #d39aa3; --accent-soft: #3a2629; --brass: #d99aa5;
     --good: #9ccaa3; --good-bg: #1f2c21; --bad: #e59ea7; --bad-bg: #3a2226; --flame: #e0a05f; --red: #e59ea7; --wrong-bg: #3a2226;
     --hero-bg: #26221d; --hero-ink: #f3ecdf;
     --eq-direct: #33402f; --eq-approx: #463c27; --eq-none: #4a3033;
@@ -98,7 +98,7 @@
   --tint-ink: rgba(238, 231, 218, .66); --overlay: rgba(0, 0, 0, .55);
   --primary-bg: #eee7da; --primary-ink: #14120f;
   --pink: #352829; --yellow: #352f21; --lilac: #2a2830; --mint: #283025; --coral: #382b23; --lime: #2d2a24; --blue: #252d30;
-  --accent: #d39aa3; --accent-soft: #3a2629; --brass: #cdaa6e;
+  --accent: #d39aa3; --accent-soft: #3a2629; --brass: #d99aa5;
   --good: #9ccaa3; --good-bg: #1f2c21; --bad: #e59ea7; --bad-bg: #3a2226; --flame: #e0a05f; --red: #e59ea7; --wrong-bg: #3a2226;
   --hero-bg: #26221d; --hero-ink: #f3ecdf;
   --eq-direct: #33402f; --eq-approx: #463c27; --eq-none: #4a3033;
@@ -174,8 +174,13 @@ span.chip { cursor: default; }
 .screen { padding: 16px 20px 120px; }
 .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
 .logo { display: grid; line-height: 1; width: fit-content; }
-.logo b { font-family: var(--serif); font-weight: 600; font-size: 26px; letter-spacing: .32em; margin-right: -.32em; }
-.logo small { font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--brass); margin-top: 4px; font-weight: 600; }
+.logo b { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 36px; letter-spacing: .01em; line-height: .9; }
+.logo .i { position: relative; }
+.logo .i::after {
+  content: ""; position: absolute; width: .17em; height: .17em; background: var(--brass);
+  transform: rotate(45deg); left: 50%; margin-left: .01em; top: .26em;
+}
+.logo small { font-size: 10px; letter-spacing: .14em; color: var(--muted); margin-top: 5px; font-weight: 500; }
 .pills { display: flex; gap: 8px; }
 .pill {
   display: inline-flex; align-items: center; gap: 5px; height: 34px; padding: 0 12px; border-radius: 999px;
@@ -262,7 +267,7 @@ a.lesson-pill:active { transform: scale(.99); }
 
 /* ---------- boas-vindas ---------- */
 .welcome { min-height: 100vh; min-height: 100dvh; padding: 28px 24px 32px; display: flex; flex-direction: column; gap: 16px; background: var(--hero-bg); color: var(--hero-ink); }
-.welcome .logo small { color: var(--brass); }
+.welcome .logo small { color: rgba(243, 236, 223, .6); }
 .welcome h1 { font-size: 44px; margin-top: 64px; line-height: 1.05; font-weight: 500; }
 .welcome p { font-size: 16px; color: rgba(243, 236, 223, .78); }
 .welcome .field { color: var(--hero-ink); }
@@ -3639,7 +3644,7 @@ window.Elle = window.Elle || {};
     </nav>`;
   }
 
-  const logo = () => `<div class="logo" aria-label="NICE, Legal English"><b>NICE</b><small>Legal English</small></div>`;
+  const logo = () => `<div class="logo" aria-label="nice, legal english"><b aria-hidden="true">n<span class="i">ı</span>ce</b><small aria-hidden="true">legal english</small></div>`;
 
   // Pílula da nuvem: só aparece com o Google Drive conectado.
   const CLOUD = {
