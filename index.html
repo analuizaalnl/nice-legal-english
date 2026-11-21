@@ -49,7 +49,11 @@
   /* cores de momento (usadas com parcimônia) */
   --accent: #7a2e3a;      /* bordô: progresso, lição atual, XP */
   --accent-soft: #f1e2e1;
+  --accent-fill: #7a2e3a; /* fundo de destaque (número da lição atual, badges) */
+  --accent-ink: #ffffff;
   --brass: #a8606c;       /* rosé: detalhes (sem dourado) */
+  --hero-btn: #f3ecdf; --hero-btn-ink: #1f1c18;
+  --edge: none;
   --good: #3e6b47;
   --good-bg: #e2ebdc;
   --bad: #9b2c3a;
@@ -77,33 +81,38 @@
   color-scheme: light;
 }
 
-/* ---------- modo noturno: café, grafite e latão ---------- */
+/* ---------- modo noturno: grafite, tons escuros levemente coloridos e rosé médio ----------
+   Pensado para continuar bonito mesmo quando o navegador (ex.: Samsung Internet) aplica o próprio
+   escurecimento por cima: nada de fundos claros; o destaque vem de texto e bordas, e os preenchimentos
+   coloridos usam tons médios (que esse filtro não "apaga"). */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #14120f; --surface: #1d1a16; --surface-2: #26221d; --ink: #eee7da; --muted: #a39a8d; --line: #322d26;
-    --tint-ink: rgba(238, 231, 218, .66); --overlay: rgba(0, 0, 0, .55);
-    --primary-bg: #eee7da; --primary-ink: #14120f;
-    --pink: #352829; --yellow: #352f21; --lilac: #2a2830; --mint: #283025; --coral: #382b23; --lime: #2d2a24; --blue: #252d30;
-    --accent: #d39aa3; --accent-soft: #3a2629; --brass: #d99aa5;
-    --good: #9ccaa3; --good-bg: #1f2c21; --bad: #e59ea7; --bad-bg: #3a2226; --flame: #e0a05f; --red: #e59ea7; --wrong-bg: #3a2226;
-    --hero-bg: #26221d; --hero-ink: #f3ecdf;
-    --eq-direct: #33402f; --eq-approx: #463c27; --eq-none: #4a3033;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
-    --shadow-up: 0 2px 4px rgba(0, 0, 0, .35), 0 14px 36px rgba(0, 0, 0, .4);
+    --bg: #121214; --surface: #1b1b1f; --surface-2: #25252a; --ink: #ede8e2; --muted: #a09a93; --line: #303036;
+    --tint-ink: rgba(237, 232, 226, .68); --overlay: rgba(0, 0, 0, .6);
+    --primary-bg: #b0607a; --primary-ink: #ffffff;
+    --pink: #2b1f25; --yellow: #29251b; --lilac: #22222c; --mint: #1d2620; --coral: #2b211c; --lime: #25242a; --blue: #1c2430;
+    --accent: #ea9fb3; --accent-fill: #b0607a; --accent-ink: #ffffff; --accent-soft: #3a222b; --brass: #ea9fb3;
+    --good: #8ed4a5; --good-bg: #172a1f; --bad: #ff8f9c; --bad-bg: #3a1a21; --flame: #f0a868; --red: #ff8f9c; --wrong-bg: #3a1a21;
+    --hero-bg: #1e1d23; --hero-ink: #f2ede6; --hero-btn: #b0607a; --hero-btn-ink: #ffffff;
+    --eq-direct: #1d2d22; --eq-approx: #2e2a1a; --eq-none: #33202a;
+    --edge: inset 0 0 0 1px rgba(255, 255, 255, .05);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .3);
+    --shadow-up: 0 2px 4px rgba(0, 0, 0, .45), 0 14px 36px rgba(0, 0, 0, .45);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #14120f; --surface: #1d1a16; --surface-2: #26221d; --ink: #eee7da; --muted: #a39a8d; --line: #322d26;
-  --tint-ink: rgba(238, 231, 218, .66); --overlay: rgba(0, 0, 0, .55);
-  --primary-bg: #eee7da; --primary-ink: #14120f;
-  --pink: #352829; --yellow: #352f21; --lilac: #2a2830; --mint: #283025; --coral: #382b23; --lime: #2d2a24; --blue: #252d30;
-  --accent: #d39aa3; --accent-soft: #3a2629; --brass: #d99aa5;
-  --good: #9ccaa3; --good-bg: #1f2c21; --bad: #e59ea7; --bad-bg: #3a2226; --flame: #e0a05f; --red: #e59ea7; --wrong-bg: #3a2226;
-  --hero-bg: #26221d; --hero-ink: #f3ecdf;
-  --eq-direct: #33402f; --eq-approx: #463c27; --eq-none: #4a3033;
-  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
-  --shadow-up: 0 2px 4px rgba(0, 0, 0, .35), 0 14px 36px rgba(0, 0, 0, .4);
+  --bg: #121214; --surface: #1b1b1f; --surface-2: #25252a; --ink: #ede8e2; --muted: #a09a93; --line: #303036;
+  --tint-ink: rgba(237, 232, 226, .68); --overlay: rgba(0, 0, 0, .6);
+  --primary-bg: #b0607a; --primary-ink: #ffffff;
+  --pink: #2b1f25; --yellow: #29251b; --lilac: #22222c; --mint: #1d2620; --coral: #2b211c; --lime: #25242a; --blue: #1c2430;
+  --accent: #ea9fb3; --accent-fill: #b0607a; --accent-ink: #ffffff; --accent-soft: #3a222b; --brass: #ea9fb3;
+  --good: #8ed4a5; --good-bg: #172a1f; --bad: #ff8f9c; --bad-bg: #3a1a21; --flame: #f0a868; --red: #ff8f9c; --wrong-bg: #3a1a21;
+  --hero-bg: #1e1d23; --hero-ink: #f2ede6; --hero-btn: #b0607a; --hero-btn-ink: #ffffff;
+  --eq-direct: #1d2d22; --eq-approx: #2e2a1a; --eq-none: #33202a;
+  --edge: inset 0 0 0 1px rgba(255, 255, 255, .05);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .3);
+  --shadow-up: 0 2px 4px rgba(0, 0, 0, .45), 0 14px 36px rgba(0, 0, 0, .45);
   color-scheme: dark;
 }
 
@@ -155,7 +164,7 @@ svg { flex-shrink: 0; }
 .chip.ink { background: var(--primary-bg); color: var(--primary-ink); box-shadow: none; }
 .chip.outline { background: var(--surface); }
 .chip.tiny { padding: 2px 8px; font-size: 11px; background: var(--accent-soft); color: var(--accent); box-shadow: none; margin-left: auto; cursor: default; font-weight: 600; }
-.chip .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c); box-shadow: inset 0 0 0 1px var(--line); }
+.chip .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c); box-shadow: inset 0 0 0 1.5px var(--muted); }
 span.chip { cursor: default; }
 
 .icon-btn { width: 42px; height: 42px; border-radius: 50%; border: 0; background: transparent; display: grid; place-items: center; cursor: pointer; color: var(--muted); }
@@ -208,7 +217,8 @@ span.chip { cursor: default; }
 .hero-title { font-family: var(--serif); font-size: 30px; font-weight: 500; line-height: 1.15; }
 .hero-xp { font-size: 13px; color: rgba(243, 236, 223, .6); }
 .hero-xp strong { color: var(--hero-ink); }
-.hero .btn { margin-top: 10px; background: var(--hero-ink); color: #1f1c18; }
+.hero .btn { margin-top: 10px; background: var(--hero-btn); color: var(--hero-btn-ink); }
+.hero, .unit, .review-card, .review-hero, .studio-card, .term-card { box-shadow: var(--edge); }
 .all-done { font-weight: 600; }
 
 .week { display: flex; gap: 6px; margin: 18px 0; }
@@ -245,7 +255,7 @@ a.lesson-pill:active { transform: scale(.99); }
 .lesson-pill .meta svg { width: 16px; height: 16px; }
 .lesson-pill.done .num { background: var(--good-bg); color: var(--good); }
 .lesson-pill.current { background: var(--surface); box-shadow: var(--shadow-up); font-weight: 600; }
-.lesson-pill.current .num { background: var(--accent); color: var(--surface); }
+.lesson-pill.current .num { background: var(--accent-fill); color: var(--accent-ink); }
 .lesson-pill.current .meta { color: var(--accent); }
 .lesson-pill.locked { background: transparent; color: var(--tint-ink); opacity: .6; cursor: not-allowed; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 12%, transparent); }
 .lesson-pill.locked .num { background: transparent; color: var(--tint-ink); }
@@ -262,7 +272,7 @@ a.lesson-pill:active { transform: scale(.99); }
 .tab.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
 .tab .badge {
   position: absolute; top: 3px; left: calc(50% + 6px); min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px;
-  background: var(--accent); color: var(--surface); font-size: 10px; font-weight: 700; display: grid; place-items: center;
+  background: var(--accent-fill); color: var(--accent-ink); font-size: 10px; font-weight: 700; display: grid; place-items: center;
 }
 
 /* ---------- boas-vindas ---------- */
@@ -273,7 +283,7 @@ a.lesson-pill:active { transform: scale(.99); }
 .welcome .field { color: var(--hero-ink); }
 .welcome .field input[type="text"] { background: rgba(243, 236, 223, .08); color: var(--hero-ink); box-shadow: inset 0 0 0 1px rgba(243, 236, 223, .18); }
 .welcome-actions { margin-top: auto; display: grid; gap: 10px; padding-top: 12px; }
-.welcome .btn.primary { background: var(--hero-ink); color: #1f1c18; }
+.welcome .btn.primary { background: var(--hero-btn); color: var(--hero-btn-ink); }
 .welcome .btn.ghost { background: transparent; color: var(--hero-ink); box-shadow: inset 0 0 0 1px rgba(243, 236, 223, .3); }
 .level-big { font-family: var(--serif); font-weight: 600; font-size: 60px; line-height: 1; color: var(--accent); }
 
@@ -301,11 +311,11 @@ a.lesson-pill:active { transform: scale(.99); }
 .option:active:not(:disabled) { transform: scale(.99); }
 .option .key { width: 26px; height: 26px; border-radius: 8px; flex-shrink: 0; background: var(--surface-2); display: grid; place-items: center; font-size: 12px; font-weight: 600; color: var(--muted); }
 .option.selected { background: var(--accent-soft); box-shadow: inset 0 0 0 1.5px var(--accent); }
-.option.selected .key { background: var(--accent); color: var(--surface); }
+.option.selected .key { background: var(--accent-fill); color: var(--accent-ink); }
 .option.correct { background: var(--good-bg); box-shadow: inset 0 0 0 1.5px var(--good); }
-.option.correct .key { background: var(--good); color: var(--surface); }
+.option.correct .key { background: transparent; color: var(--good); box-shadow: inset 0 0 0 1.5px var(--good); }
 .option.wrong { background: var(--bad-bg); box-shadow: inset 0 0 0 1.5px var(--bad); }
-.option.wrong .key { background: var(--bad); color: var(--surface); }
+.option.wrong .key { background: transparent; color: var(--bad); box-shadow: inset 0 0 0 1.5px var(--bad); }
 .option:disabled { cursor: default; }
 .options.chips { grid-template-columns: 1fr 1fr; }
 .options.chips .option { font-family: var(--clause); font-size: 17px; }
@@ -366,6 +376,10 @@ a.lesson-pill:active { transform: scale(.99); }
 .is-correct .feedback h3 { color: var(--good); }
 .is-wrong .feedback h3 { color: var(--bad); }
 .feedback .label { font-weight: 600; }
+.diff { line-height: 1.7; }
+.diff mark { border-radius: 4px; padding: 0 4px; font-weight: 600; }
+.diff mark.del { background: var(--bad-bg); color: var(--bad); text-decoration: line-through; text-decoration-thickness: 1.5px; box-shadow: inset 0 0 0 1px var(--bad); }
+.diff mark.ins { background: var(--good-bg); color: var(--good); box-shadow: inset 0 0 0 1px var(--good); }
 .feedback .link-btn { justify-self: start; margin-top: 2px; font-size: 14px; }
 @keyframes rise { from { transform: translateY(10px); opacity: 0; } }
 
@@ -387,14 +401,14 @@ a.lesson-pill:active { transform: scale(.99); }
 .mic { display: grid; place-items: center; width: 100px; height: 100px; margin: 28px auto 12px; border-radius: 50%; background: var(--primary-bg); color: var(--primary-ink); border: 0; cursor: pointer; box-shadow: 0 0 0 10px var(--c); transition: transform .1s; }
 .mic svg { width: 36px; height: 36px; }
 .mic:active { transform: scale(.96); }
-.mic.live { animation: pulse 1.2s ease-in-out infinite; background: var(--accent); }
+.mic.live { animation: pulse 1.2s ease-in-out infinite; background: var(--accent-fill); color: var(--accent-ink); }
 @keyframes pulse { 50% { box-shadow: 0 0 0 18px var(--accent-soft); } }
 .mic-status { text-align: center; color: var(--muted); font-size: 14px; min-height: 22px; }
 .link-btn.center { justify-self: center; font-size: 14px; }
 .toggle { display: flex; align-items: center; gap: 12px; font-weight: 500; cursor: pointer; }
 .toggle input { appearance: none; width: 46px; height: 28px; border-radius: 999px; background: var(--line); position: relative; cursor: pointer; flex-shrink: 0; transition: background .15s; margin: 0; }
 .toggle input::after { content: ""; position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: var(--surface); box-shadow: 0 1px 3px rgba(0, 0, 0, .2); transition: left .15s; }
-.toggle input:checked { background: var(--accent); }
+.toggle input:checked { background: var(--accent-fill); }
 .toggle input:checked::after { left: 21px; }
 
 /* ---------- resultado ---------- */
@@ -421,6 +435,8 @@ a.lesson-pill:active { transform: scale(.99); }
 .search input { flex: 1; border: 0; outline: none; background: transparent; font-size: 16px; min-width: 0; color: var(--ink); }
 .filters { display: flex; gap: 8px; overflow-x: auto; padding: 2px 20px 10px; margin: 0 -20px; scrollbar-width: none; }
 .filters::-webkit-scrollbar { display: none; }
+.filters .chip { flex: none; }
+.filters::after { content: ""; flex: none; width: 8px; }
 .count { font-size: 13px; color: var(--muted); margin: 6px 0 10px; }
 .gloss-item { background: var(--surface); border-radius: 16px; margin-bottom: 8px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--line); }
 .gloss-item[open] { background: var(--c); box-shadow: none; }
@@ -503,7 +519,7 @@ a.lesson-pill:active { transform: scale(.99); }
 .chat-bar { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: min(var(--col), 100%); display: flex; align-items: flex-end; gap: 8px; padding: 10px 12px calc(12px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--bg) 96%, transparent); backdrop-filter: blur(10px); border-top: 1px solid var(--line); }
 .chat-bar textarea { flex: 1; resize: none; border: 0; border-radius: 18px; padding: 11px 16px; background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); font-size: 16px; line-height: 1.35; max-height: 120px; }
 .chat-bar textarea:focus { outline: none; box-shadow: inset 0 0 0 1.5px var(--accent); }
-.send { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--accent); color: var(--surface); display: grid; place-items: center; cursor: pointer; flex-shrink: 0; }
+.send { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--accent-fill); color: var(--accent-ink); display: grid; place-items: center; cursor: pointer; flex-shrink: 0; }
 .send:disabled { background: var(--line); cursor: not-allowed; }
 .mic-small svg { width: 22px; height: 22px; }
 .mic-small.live { background: var(--accent-soft); color: var(--accent); }
@@ -621,12 +637,63 @@ window.Elle = window.Elle || {};
    */
   function gradeText(input, patterns, extraAccepted) {
     const user = normalize(input || "");
-    if (!user) return { result: "wrong" };
     const accepted = patterns.flatMap(expand).concat(extraAccepted || []).map(normalize);
-    if (accepted.includes(user)) return { result: "correct" };
+    if (!user) return { result: "wrong", closest: accepted[0] || "" };
+    if (accepted.includes(user)) return { result: "correct", closest: user };
+    const typo = accepted.find((a) => isTypoOf(user, a));
+    if (typo) return { result: "typo", closest: typo };
+    return { result: "wrong", closest: closestTo(user, accepted) };
+  }
 
-    if (accepted.some((a) => isTypoOf(user, a))) return { result: "typo" };
-    return { result: "wrong" };
+  // A resposta aceita mais parecida com a da aluna (por palavras em comum)
+  function closestTo(user, accepted) {
+    const u = user.split(" ");
+    let best = accepted[0] || "", bestScore = -1;
+    for (const a of accepted) {
+      const t = a.split(" ");
+      const score = lcs(u, t).length * 2 - Math.abs(t.length - u.length);
+      if (score > bestScore) { bestScore = score; best = a; }
+    }
+    return best;
+  }
+
+  // Maior subsequência comum entre duas listas de palavras: devolve pares [i, j] alinhados
+  function lcs(a, b) {
+    const m = a.length, n = b.length;
+    const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+    for (let i = m - 1; i >= 0; i--)
+      for (let j = n - 1; j >= 0; j--)
+        dp[i][j] = a[i] === b[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+    const pairs = [];
+    let i = 0, j = 0;
+    while (i < m && j < n) {
+      if (a[i] === b[j]) { pairs.push([i, j]); i++; j++; }
+      else if (dp[i + 1][j] >= dp[i][j + 1]) i++;
+      else j++;
+    }
+    return pairs;
+  }
+
+  /**
+   * Alinha a resposta da aluna com a resposta certa, palavra por palavra.
+   * Devolve { user: [{ w, ok }], target: [{ w, ok }] } com as palavras ORIGINAIS
+   * (com maiúsculas e pontuação); ok = false marca o que estava errado / faltou.
+   */
+  function alignWords(userText, targetText) {
+    const split = (text) => {
+      const words = String(text || "").trim().split(/\s+/).filter(Boolean);
+      const tokens = [];
+      words.forEach((w, wi) => normalize(w).split(" ").filter(Boolean).forEach((t) => tokens.push({ t, wi })));
+      return { words, tokens };
+    };
+    const U = split(userText), T = split(targetText);
+    const pairs = lcs(U.tokens.map((x) => x.t), T.tokens.map((x) => x.t));
+    const uOk = new Set(pairs.map((p) => p[0])), tOk = new Set(pairs.map((p) => p[1]));
+    const mark = (S, okSet) => S.words.map((w, wi) => {
+      const mine = S.tokens.map((x, k) => [x, k]).filter(([x]) => x.wi === wi);
+      return { w, ok: mine.length === 0 || mine.every(([, k]) => okSet.has(k)) };
+    });
+    return { user: mark(U, uOk), target: mark(T, tOk) };
   }
 
   // Erro de digitação = mesmas palavras, no máximo 2 palavras com 1 letra trocada
@@ -660,7 +727,7 @@ window.Elle = window.Elle || {};
     return hits / want.length;
   }
 
-  E.grading = { normalize, expand, levenshtein, gradeText, speechScore };
+  E.grading = { normalize, expand, levenshtein, gradeText, speechScore, alignWords };
 })(window.Elle);
 
 </script>
@@ -2981,6 +3048,22 @@ window.Elle = window.Elle || {};
     if (S.index >= S.queue.length) finish(); else renderStep();
   }
 
+  function renderDiff(s, ui) {
+    const said = s.kind === "speak" ? ui.heard : ui.typed;
+    if (!said || !said.trim()) return "";
+    let target = s.kind === "translate" ? s.display : s.text;
+    // Se a aluna seguiu outra resposta aceita (ex.: "contract" em vez de "agreement"), compara com ela
+    if (s.kind === "translate" && ui.closest && grading.normalize(s.display) !== ui.closest) {
+      target = ui.closest.charAt(0).toUpperCase() + ui.closest.slice(1);
+    }
+    const a = grading.alignWords(said, target);
+    const words = (list, cls) => list.map((x) => (x.ok ? esc(x.w) : `<mark class="${cls}">${esc(x.w)}</mark>`)).join(" ");
+    const userLabel = s.kind === "speak" ? "Ouvi" : "Você escreveu";
+    return `
+      <p class="diff"><span class="label">${userLabel}:</span> ${words(a.user, "del")}</p>
+      <p class="diff"><span class="label">Correção:</span> ${words(a.target, "ins")}</p>`;
+  }
+
   const correctAnswer = (s) =>
     s.kind === "translate" ? s.display : s.kind === "error" ? s.corrected : s.kind === "dictation" || s.kind === "speak" ? s.text : s.answer;
 
@@ -3021,14 +3104,18 @@ window.Elle = window.Elle || {};
       : r === "typo" ? pick(HUMOR.typo)
       : r === "partial" ? "Pares feitos! Os que você errou vão para a revisão."
       : pick(HUMOR.wrong);
-    const showAnswer = s.kind === "error" || ((r === "wrong" || r === "typo") && s.kind !== "match");
+    // Tradução, ditado e fala: mostra a palavra errada riscada e a certa destacada
+    const typedKind = s.kind === "translate" || s.kind === "dictation" || s.kind === "speak";
+    const diffHtml = typedKind && (r === "wrong" || r === "typo") ? renderDiff(s, ui) : "";
+    const showAnswer = !diffHtml && (s.kind === "error" || ((r === "wrong" || r === "typo") && s.kind !== "match"));
     const answerLabel = s.kind === "error" ? "Corrigido" : s.kind === "speak" ? "Frase" : r === "typo" ? "Forma correta" : "Resposta";
     foot.className = "lesson-foot " + (ok ? "is-correct" : "is-wrong");
     foot.innerHTML = `
       <div class="foot-inner">
         <div class="feedback" role="status">
           <h3>${esc(title)}</h3>
-          ${s.kind === "speak" ? `<p><span class="label">Ouvi:</span> “${esc(ui.heard)}”</p>` : ""}
+          ${s.kind === "speak" && !diffHtml ? `<p><span class="label">Ouvi:</span> “${esc(ui.heard)}”</p>` : ""}
+          ${diffHtml}
           ${showAnswer ? `<p><span class="label">${answerLabel}:</span> <strong>${esc(correctAnswer(s))}</strong></p>` : ""}
           ${s.explanation ? `<p>${esc(s.explanation)}</p>` : ""}
           ${ui.aiNote ? `<p class="ai-note">${ICON.sparkle}<span>${esc(ui.aiNote)}</span></p>` : ""}
@@ -3065,9 +3152,11 @@ window.Elle = window.Elle || {};
     if (ui.checked) return;
     if (s.kind === "translate" || s.kind === "dictation") {
       if (!ui.typed.trim()) return;
-      ui.result = s.kind === "dictation"
-        ? grading.gradeText(ui.typed, [], [s.text]).result
-        : grading.gradeText(ui.typed, s.answers, store.state.accepted[s.id]).result;
+      const g = s.kind === "dictation"
+        ? grading.gradeText(ui.typed, [], [s.text])
+        : grading.gradeText(ui.typed, s.answers, store.state.accepted[s.id]);
+      ui.result = g.result;
+      ui.closest = g.closest;
       document.getElementById("answer").readOnly = true;
     } else if (s.kind === "error") {
       if (ui.selected === null) return;
